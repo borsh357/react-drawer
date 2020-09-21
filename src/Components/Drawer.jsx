@@ -3,12 +3,12 @@ import './Drawer.css';
 import { drawerState } from '../js/store';
 import { toggleDrawer } from '../js/actions';
 import { view } from '@risingstack/react-easy-state';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Drawer extends React.Component {
   render() {
     return (
-      <section class="drawer">
+      <section className="drawer">
         <nav role="navigation">
           <div
             id="drawerToggler"
@@ -19,15 +19,15 @@ class Drawer extends React.Component {
             <span></span>
             <span></span>
             <ul>
-              <Link to="/dashboard">
+              <NavLink to="/dashboard" activeClassName="drawer--activelink">
                 <li>Dashboard</li>
-              </Link>
-              <Link to="/profile">
+              </NavLink>
+              <NavLink to="/profile" activeClassName="drawer--activelink">
                 <li>Profile</li>
-              </Link>
-              <Link to="/settings">
+              </NavLink>
+              <NavLink to="/settings" activeClassName="drawer--activelink">
                 <li>Settings</li>
-              </Link>
+              </NavLink>
             </ul>
           </div>
         </nav>
