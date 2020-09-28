@@ -2,88 +2,19 @@
   height: 0;
 }
 
-#drawerToggler {
-  display: block;
-  position: fixed;
-  top: 20px;
-  right: 10px;
-  z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#drawerToggler a {
-  text-decoration: none;
-  color: #232323;
-  transition: color 0.3s ease;
-}
-
-#drawerToggler a:hover {
-  color: tomato;
-}
-
-.drawer--activelink {
-  color: tomato !important;
-}
-
-#drawerToggler span {
-  display: block;
-  width: 33px;
-  height: 5px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #fff;
-  border-radius: 3px;
-  border: 0.5px solid #000;
-  z-index: 1;
-  transform-origin: 0px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#drawerToggler span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#drawerToggler span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-.drower--show span {
-  opacity: 1;
-  transform: rotate(45deg);
-  background: #232323 !important;
-}
-
-.drower--show span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-.drower--show span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#drawerToggler ul {
+.drawer {
   position: absolute;
   width: 300px;
-  height: 100vh;
-  margin: -100px 0 0 485px;
+  height: calc(100vh - 175px);
   padding: 50px;
   padding-top: 125px;
   background: #ededed;
-  list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-#drawerToggler ul li {
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-.drower--show ul {
-  transform: translate(-200%, 0);
+.drawer--show {
+  transform: translate(0, 0);
 }

@@ -1,38 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Drawer.css';
-import { drawerState } from '../js/store';
-import { toggleDrawer } from '../js/actions';
+import store from '../js/store';
 import { view } from '@risingstack/react-easy-state';
-import { NavLink } from 'react-router-dom';
 
-class Drawer extends React.Component {
-  render() {
-    return (
-      <section className="drawer">
-        <nav role="navigation">
-          <div
-            id="drawerToggler"
-            className={drawerState.hidden ? '' : 'drower--show'}
-            onClick={toggleDrawer}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul>
-              <NavLink to="/dashboard" activeClassName="drawer--activelink">
-                <li>Dashboard</li>
-              </NavLink>
-              <NavLink to="/profile" activeClassName="drawer--activelink">
-                <li>Profile</li>
-              </NavLink>
-              <NavLink to="/settings" activeClassName="drawer--activelink">
-                <li>Settings</li>
-              </NavLink>
-            </ul>
-          </div>
-        </nav>
+function Drawer(props) {
+  return (
+    <div>
+      <section
+        className={store.drawerState.hidden ? 'drawer' : 'drawer drawer--show'}
+      >
+        {props.content}
       </section>
-    );
-  }
+    </div>
+  );
 }
+
+Drawer.propTypes = {
+  content: PropTypes.element,
+};
+
 export default view(Drawer);

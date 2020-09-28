@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Drawer from './Components/Drawer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DashboardPage from './Pages/Dashboard';
-import ProfilePage from './Pages/Profile';
-import SettingsPage from './Pages/Settings';
-import HomePage from './Pages/Home';
+// import DashboardPage from './Pages/Dashboard';
+// import ProfilePage from './Pages/Profile';
+// import SettingsPage from './Pages/Settings';
+// import HomePage from './Pages/Home';
+import Page from './Components/Page';
 
 function App() {
   return (
@@ -13,26 +13,22 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Drawer />
-            <HomePage />
+            <Page title="Home Page" />
           </Route>
         </Switch>
         <Switch>
           <Route path="/dashboard">
-            <Drawer />
-            <DashboardPage />
+            <Page title="Dashboard Page" />
           </Route>
         </Switch>
         <Switch>
           <Route path="/profile">
-            <Drawer />
-            <ProfilePage />
+            <Page title="Profile Page" />
           </Route>
         </Switch>
         <Switch>
           <Route path="/settings">
-            <Drawer />
-            <SettingsPage />
+            <Page title="Settings Page" />
           </Route>
         </Switch>
       </Router>

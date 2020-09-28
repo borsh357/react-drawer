@@ -1,5 +1,9 @@
-import { drawerState } from './store';
+import store from './store';
 
 export function toggleDrawer() {
-  drawerState.hidden = !drawerState.hidden;
+  store.drawerState.hidden = !store.drawerState.hidden;
+}
+
+export function hideDrawer() {
+  store.drawerState.hidden = true;
 }

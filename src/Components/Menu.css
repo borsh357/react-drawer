@@ -1,0 +1,24 @@
+.menu-link {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+  color: tomato;
+}
+
+.menu-link--active {
+  color: tomato !important;
+}
+
+.menu {
+  text-align: left;
+}
+
+.menu ul li {
+  padding: 10px 0;
+  font-size: 22px;
+  list-style-type: none;
+  font-weight: 600;
+}
